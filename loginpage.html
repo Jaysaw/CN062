@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Learning Login</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        background-image: url(onlineLearning.jpg);
+        background-size: cover;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 60px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border:5px black solid;
+    }
+
+    h2{
+        font-style: italic;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .signup-link {
+        text-align: center;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Online Learning Login</h2>
+        <form id="loginForm" action="/login" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+        <div class="signup-link">
+            Don't have an account? <a href="/Hackathon/Signup.html">Sign up</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the form from submitting normally
+    
+          
+          const formData = new FormData(event.target);
+          const username = formData.get('username');
+          const password = formData.get('password');
+    
+         
+          const isLoggedIn = true;
+    
+          if (isLoggedIn) {
+            window.location.href = 'Learning.html';
+          } else {
+            alert('Invalid username or password. Please try again.');
+          }
+        });
+      </script>
+</body>
+</html>
